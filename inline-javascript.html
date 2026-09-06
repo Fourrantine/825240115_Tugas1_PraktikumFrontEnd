@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript dasar www.belajar-it.web.id</title>
+</head>
+<body>
+    <script>
+        //tipe data primitif string
+        let nama ="John Doe";
+        let pesan ='Halo selamat datang!';
+        console.log(nama);
+        console.log(pesan);
+
+        //penggabungan 2 string
+        let namaLengkap = 'John' + ' ' + 'Doe'; 
+        console.log(namaLengkap);
+
+        //akses karakter dalam string
+        let namastring ='John';
+        console.log(nama[0]);
+
+        // mengetahui panjang sebuah string
+        let namalength ='John';
+        console.log(nama.length);
+
+        // mengubah case karakter
+        let teks = 'Belajar Javascript'; 
+        console.log(teks.toLowerCase()); // Output: belajar Javascript
+        console.log(teks.toUpperCase()); // Output: BELAJAR JAVASCRIPT
+
+        // Mencari indeks karakter atau substring
+        let teksIndeks = 'Belajar Javascript'; 
+        console.log(teks.indexOf('Javascript')); // Output: 8
+        console.log(teks.indexOf('CSS')); // Output: -1 (tidak ditemukan) 
+        console.log(teks.lastIndexOf('a')); // Output: 10 (indeks karakter terakhir yang cocok)
+
+        // Memotong (Slice) String
+        let teksSlice = 'Belajar Javascript'; 
+        console.log(teks.slice(7)); // Output: Javascript 
+        console.log(teks.slice(0, 7)); // Output: Belajar
+
+        // Menggantikan (replace) Substring
+        let teksSubstring = 'Belajar Javascript';
+        console.log(teks.replace('Javascript', 'CSS')); // Output: Belajar CSS
+
+        // Memisahkan String menjadi array
+        let teksArray = 'Belajar,Javascript'; 
+        let arrayTeks = teks.split(',');
+        console.log(arrayTeks); // Output: ['Belajar', 'Javascript']
+
+        // Menggabungkan array menjadi string
+        let arrayTeksString = ['Belajar', 'Javascript']; 
+        let teksString = arrayTeks.join(' ');
+        console.log(teks); // Output: Belajar Javascript
+
+        // Interpolasi String
+        let namaInterpolasi = 'John Doe'; 
+        let umur = 25;
+        let teksInterpolasi = `Nama: ${nama}, Umur: ${umur}`; 
+        console.log(teks); // Output: Nama: John Doe, Umur: 25 
+
+        // Karakter Escape
+        //1.Baris baru(\n)
+        let teksBaru = 'Halo,\nSelamat datang!'; 
+        console.log(teks);
+        //2.Tab (\t)
+        let teksTab = 'Nama:\tIrvan BelajarIT'; 
+        console.log(teks);
+        //3.Tanda kutip tunggal(')
+        let teksKutip = 'I\'m Learning Javascript'; 
+        console.log(teks); // Output: I'm learning Javascript
+        //4. Kutip Ganda ( “ )
+        let teksGanda = "Dia Berkata, \"Hello!\""; 
+        console.log(teks);
+        //Tanda backslash ( \ )
+        let teksBackslash = 'C:\\MyFolder\\MyFile.txt'; 
+        console.log(teks); // Output: C:\MyFolder\MyFile.txt 
+        
+
+        // Mengubah case (huruf besar atau kecil)
+
+        //1. toUpperCase()
+        let text = 'hello world';
+        let uppercaseText = text.toUpperCase(); 
+        console.log(uppercaseText); // Output: "HELLO WORLD"
+
+        //2. toLowerCase()
+        let textLower = 'Hello World';
+        let lowercaseText = text.toLowerCase(); 
+        console.log(lowercaseText); // Output: "hello world"
+
+        //Pembuatan array
+        // 1. Mendeklarasikan array secara literal :
+        let buah = ['apel','pisang','jeruk'];
+        let mixedArray = [1, 'two', true, { name: 'John' }]; //array dengan berbagai jenis nilai
+
+        // 2. Menggunakan konstruktor Array :
+        let angka = new Array(1,2,3,4,5,6);
+
+        // Mengakses Array
+        // menggunakan indeks
+        let buahIndeks = ['Apel', 'Pisang', 'Jeruk'];
+        console.log(buah[0]); // Output: Apel 
+        console.log(buah[1]); // Output: Pisang 
+        console.log(buah[2]); // Output: Jeruk
+
+        //Menggunakan Looping
+        let angkaLooping = [1, 2, 3, 4, 5];
+        for (let i = 0; i < angka.length; i++) { 
+        console.log(angka[i]);
+        }
+
+        //mengakses elemen array buah secara berurutan
+        let buahArray = ['Apel', 'Pisang', 'Jeruk']; 
+        let i = 0;
+        while (i < buah.length) { 
+        console.log(buah[i]); 
+        i++;
+        }
+
+        //Menggunakan metode array
+        //forEach()
+        let numbers = [1, 2, 3, 4, 5];
+        numbers.forEach(function(number) { 
+        console.log(number);
+        });
+
+        //map()
+        let numbersMap = [1, 2, 3, 4, 5];
+        let squaredNumbers = numbers.map(function(number) {
+        return number * number;
+        });
+        console.log(squaredNumbers);
+
+        //filter()
+        let numbersFilter = [1, 2, 3, 4, 5];
+        let evenNumbers = numbers.filter(function(number) {
+        return number % 2 === 0;
+        });
+        console.log(evenNumbers); // Output: [2, 4]
+
+        //find()
+        let numbersFind = [1, 2, 3, 4, 5];
+        let foundNumber = numbers.find(function(number) {
+        return number > 3;
+        });
+        console.log(foundNumber); // Output: 4
+
+        //indexOf()
+        let numbersIndex = [1, 2, 3, 4, 5];
+        let index = numbers.indexOf(4);
+        console.log(index); // Output: 3
+
+        //includes()
+        let numbersIncludes = [1, 2, 3, 4, 5];
+        let includesNumber = numbers.includes(5);
+        console.log(includesNumber); // Output: true
+
+        //Memanipulasi Elemen Array
+        //1.Metode Push
+        let buahPush = ['Apel', 'Pisang', 'Jeruk'];
+        buah.push('Mangga');
+        console.log(buah);// Output: ['Apel', 'Pisang', 'Jeruk', 'Mangga']
+
+        //2. Metode pop()
+        let fruits = ['Apple', 'Banana', 'Orange'];
+        let lastFruit = fruits.pop();
+        console.log(lastFruit); // Output: 'Orange' 
+        console.log(fruits); // Output: ['Apple', 'Banana']
+
+        //3. Metode unshift()
+        let fruitsUnshift = ['Apple', 'Banana', 'Orange'];
+        fruits.unshift('Mango'); 
+        console.log(fruits);// Output: ['Mango', 'Apple', 'Banana', 'Orange']
+
+        //4. Metode shift()
+        let fruitsShift = ['Apple', 'Banana', 'Orange'];
+        let firstFruit = fruits.shift();
+        console.log(firstFruit); // Output: 'Apple' 
+        console.log(fruits); // Output: ['Banana', 'Orange']
+
+        //5.Metode splice()
+        let fruitsSplice = ['Apple', 'Banana', 'Orange', 'Mango'];
+
+        // Menghapus elemen ketiga ('Orange') 
+        fruits.splice(2, 1);
+        console.log(fruits); // Output: ['Apple', 'Banana', 'Mango']
+
+        // Mengganti elemen pertama dengan elemen baru ('Strawberry')
+        fruits.splice(0, 1, 'Strawberry');
+        console.log(fruits); // Output: ['Strawberry', 'Banana', 'Mango']
+
+        // Menambahkan elemen baru ('Pineapple') setelah elemen kedua
+        fruits.splice(2, 0, 'Pineapple');
+        console.log(fruits); // Output: ['Strawberry', 'Banana', 'Pineapple', 'Mango']
+
+        //6.Metode Slice()
+        let fruitsSlice = ['Apple', 'Banana', 'Orange', 'Mango'];
+        let slicedFruits = fruits.slice(1, 3);
+        console.log(slicedFruits); // Output: ['Banana', 'Orange']
+
+        //7. Metode concat()
+        let fruits1 = ['Apple', 'Banana']; 
+        let fruits2 = ['Orange', 'Mango'];
+        let combinedFruits = fruits1.concat(fruits2);
+        console.log(combinedFruits); // Output: ['Apple', 'Banana', 'Orange', 'Mango']
+
+        //8. Metode reserve()
+        let fruitsReserve = ['Apple', 'Banana', 'Orange', 'Mango'];
+        fruits.reverse();
+        console.log(fruits); // Output: ['Mango', 'Orange', 'Banana', 'Apple']
+
+        //9. Metode sort()
+        let fruitsSort = ['Banana', 'Apple', 'Orange', 'Mango'];
+        fruits.sort();
+        console.log(fruits);// Output: ['Apple', 'Banana', 'Mango', 'Orange']
+
+        //10. Metode join()
+        let fruitsJoin = ['Apple', 'Banana', 'Orange', 'Mango'];
+        let joinedString = fruits.join(', ');
+        console.log(joinedString);// Output: 'Apple, Banana, Orange, Mango'
+
+        //11. Metode length
+        let fruitsLength = ['Apple', 'Banana', 'Orange', 'Mango'];
+        console.log(fruits.length); // Output: 4
+
+        //Operator logika
+        //1.Operator AND(&&)
+        // let x = 5; 
+        // let y = 3;
+        // let isBothTrue = (x > 0) && (y < 10); // Hasil: true
+        // let isAnyFalse = (x > 0) && (y > 10); // Hasil: false
+
+        //2.Operator OR
+        // let x = 5; 
+        // let y = 3;
+        // let isEitherTrue = (x > 0) || (y > 10); // Hasil: true
+        // let areBothFalse = (x < 0) || (y < 0); // Hasil: false
+
+        //3. Operator NOT ( ! )
+        // let x = 5; 
+        // let y = 3;
+        // let isXNotZero = !(x === 0); // Hasil: true
+        // let isYNotPositive = !(y > 0); // Hasil: false
+
+        //Pengkondisian/Pemilihan
+        //Pernyataan Kondisi IF
+        // let x = 10;
+        // if (x > 5) {
+        // console.log("Nilai x lebih besar dari 5");
+        // }
+
+        //kondisi if kedua
+        var x = 2; 
+        x = x + 3;
+        if(x == 5) {
+        alert("Menambahkan x, yang bernilai 2, dengan 3 menghasilkan 5.");
+        }
+
+        //pernyataan else if
+        let x = 10;
+        if (x > 10) {
+        console.log("Nilai x lebih besar dari 10");
+        } else if (x === 10) {
+        console.log("Nilai x sama dengan 10");
+        } else {
+        console.log("Nilai x kurang dari 10");
+        }
+
+        //pernyataan else
+        let x = 5;
+        if (x > 10) {
+        console.log("Nilai x lebih besar dari 10");
+        } else {
+        console.log("Nilai x kurang dari atau sama dengan 10");
+        }
+
+        //1.Operator perbandingan
+        // let x = 5;
+        // let y = 10;
+        // if (x < y) {
+        // console.log("x lebih kecil dari y");
+        // }
+        // else if (x > y) {
+        // console.log("x lebih besar dari y");
+        // }
+
+        //2.Operator logika
+        // let x = 5; 
+        // let y = 10;
+        // if (x > 0 && y < 20) {
+        // console.log("x lebih besar dari 0 dan y lebih kecil dari 20");
+        // }
+
+        //Pernyataan Switch Case
+        var emailDomain = "HotMail";
+        switch(emailDomain) { 
+        case "GMail":
+        alert("Anda menggunakan Google account."); 
+        break;
+        case "YMail":
+        alert("Anda menggunakan Yahoo! account."); 
+        case "HotMail":
+        alert("Anda menggunakan Hot Mail account."); 
+        default:
+        alert("Kami tidak mengenal email provider Anda.");
+        }
+
+        //Perulangan / Loop :
+        //Perulangan For
+        for (let i = 0; i < 5; i++) { 
+        console.log(i);
+        }
+
+        //Perulangan while
+        // let i = 0;
+        // while (i < 5) { 
+        // console.log(i); 
+        // i++;
+        // }
+
+        //Perulangan do while
+        // let i = 0;
+        // do { 
+        // console.
+        // log(i); 
+        // i++;
+        // } while (i < 5);
+
+
+
+
+
+
+        
+        console.log("Hello world inline javascript");
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
